@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { NexusApiService } from '../../../../core/services/nexus-api.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-highlights-widget',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   template: `
     <div class="glass-panel rounded-3xl p-6 h-full flex flex-col hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(0,194,255,0.2)] transition-all duration-500 relative overflow-hidden">
       <div class="flex justify-between items-center mb-6 relative z-10">
         <h2 class="font-display text-xl font-bold uppercase tracking-widest text-white">Latest Highlights</h2>
-        <a href="#" class="text-xs text-cyan-accent hover:text-white transition-colors uppercase tracking-widest">View All</a>
+        <a routerLink="/highlights" class="text-xs text-cyan-accent hover:text-white transition-colors uppercase tracking-widest cursor-pointer">View All</a>
       </div>
 
       <div *ngIf="isLoading" class="flex-1 flex items-center justify-center">
@@ -19,7 +20,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
       </div>
 
       <div *ngIf="!isLoading && videos.length > 0" class="flex overflow-x-auto gap-4 custom-scrollbar pb-2">
-        <div *ngFor="let video of videos" class="flex-none w-64 group cursor-pointer relative rounded-2xl overflow-hidden aspect-video">
+        <div *ngFor="let video of videos" routerLink="/highlights" class="flex-none w-64 group cursor-pointer relative rounded-2xl overflow-hidden aspect-video">
           <!-- Thumbnail -->
           <img [src]="video.snippet.thumbnails.medium.url" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
           
