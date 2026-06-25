@@ -1,0 +1,17 @@
+{
+  "NAV": {
+    "DASHBOARD": "Centro de Mando",
+    "LIVE_MATCHES": "Partidos en Vivo",
+    "ANALYTICS": "Analítica",
+    "AI_WORKSPACE": "Centro de Inteligencia Artificial",
+    "HIGHLIGHTS": "Mejores Momentos",
+    "FANTASY": "Liga Fantástica",
+    "AWARDS": "Museo Digital",
+    "ADMIN": "Panel de Administración"
+  },
+  "COMMON": {
+    "SEARCH": "Buscar equipos, jugadores o preguntar a la IA...",
+    "SIGNOUT": "Cerrar Sesión",
+    "SETTINGS": "Ajustes"
+  }
+}

@@ -1,0 +1,35 @@
+name: FIFA Nexus CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.x
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+        
+    - name: Install Dependencies
+      run: |
+        cd fifa-nexus-api && npm ci
+        cd ../fifa-nexus-web && npm ci
+        
+    - name: Build Backend
+      run: cd fifa-nexus-api && npm run build
+      
+    - name: Build Frontend
+      run: cd fifa-nexus-web && npm run build -- --configuration production
+      
+    - name: Run Tests (Placeholder)
+      run: echo "No tests configured yet. Skipping."

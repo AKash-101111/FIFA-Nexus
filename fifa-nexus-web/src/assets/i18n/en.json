@@ -1,0 +1,17 @@
+{
+  "NAV": {
+    "DASHBOARD": "Command Center",
+    "LIVE_MATCHES": "Live Matches",
+    "ANALYTICS": "Analytics",
+    "AI_WORKSPACE": "AI Command Center",
+    "HIGHLIGHTS": "Highlights Hub",
+    "FANTASY": "Fantasy League",
+    "AWARDS": "Digital Museum",
+    "ADMIN": "Admin Panel"
+  },
+  "COMMON": {
+    "SEARCH": "Search teams, players, or ask AI...",
+    "SIGNOUT": "Sign Out",
+    "SETTINGS": "Settings"
+  }
+}
